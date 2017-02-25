@@ -1,6 +1,6 @@
 {
   "name": "opencv",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Node Bindings to OpenCV",
   "author": "Peter Braden <peterbraden@peterbraden.co.uk>",
   "dependencies": {
@@ -21,7 +21,8 @@
   "license": "MIT",
   "scripts": {
     "build": "node-gyp build",
-    "test": "node test/unit.js"
+    "test": "node test/unit.js",
+    "install": "node-pre-gyp install --fallback-to-build"
   },
   "keywords": [
     "opencv",
