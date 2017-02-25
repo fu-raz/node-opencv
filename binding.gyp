@@ -137,17 +137,17 @@
               },
             }
         }],
-        [ # cflags on OS X are stupid and have to be defined like this
-          "OS==\"mac\"", {
-            "xcode_settings": {
-            "OTHER_CFLAGS": [
+        [ 'OS=="mac"', {
+          # cflags on OS X are stupid and have to be defined like this
+          'xcode_settings': {
+            'OTHER_CFLAGS': [
               "-mmacosx-version-min=10.7",
-              "-std=c++11",
-              "-stdlib=libc++",
-              "<!@(node utils/find-opencv.js --cflags)",
-            ],
-            "GCC_ENABLE_CPP_RTTI": "YES",
-            "GCC_ENABLE_CPP_EXCEPTIONS": "YES"
+              "-std=gnu++11",
+              "-stdlib=libstdc++",
+              '<!@(pkg-config --cflags opencv)'
+            ]
+            , "GCC_ENABLE_CPP_RTTI": "YES"
+            , "GCC_ENABLE_CPP_EXCEPTIONS": "YES"
           }
         }]
     ]
